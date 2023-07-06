@@ -3,6 +3,8 @@ package com.belkovicsd.myproject.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
@@ -23,8 +25,8 @@ public class Product {
         )
         private Long id;
         private String name;
-        private Color color;
-        private Size size;
+        private List<Color> color;
+        private List<Size> size;
         private Type type;
         private Double price;
 

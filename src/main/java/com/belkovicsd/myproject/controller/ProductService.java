@@ -19,4 +19,7 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    public void uploadProduct(@Nonnull Product product) {
+        productRepository.save(product);
+    }
 }

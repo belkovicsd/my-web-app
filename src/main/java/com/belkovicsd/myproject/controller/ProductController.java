@@ -3,9 +3,7 @@ package com.belkovicsd.myproject.controller;
 import com.belkovicsd.myproject.model.Product;
 import jakarta.annotation.Nonnull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +21,8 @@ public class ProductController {
         return productService.getProducts();
     }
 
+    @PostMapping("/post")
+    public void uploadProduct(@Nonnull @RequestBody Product product) {
+        productService.uploadProduct(product);
+    }
 }
